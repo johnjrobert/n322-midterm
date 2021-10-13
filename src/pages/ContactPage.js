@@ -14,7 +14,9 @@ import {
 } from "semantic-ui-react";
 
 const ContactPage = () => {
-  const [newInput, setNewInput] = React.useState([]);
+  const [name, setName] = React.useState([]);
+  const [email, setEmail] = React.useState([]);
+  const [message, setMessage] = React.useState([]);
   return (
     <React.Fragment>
       <Menu>
@@ -37,8 +39,8 @@ const ContactPage = () => {
             fluid
             placeholder="Please Enter Your Full Name..."
             label="Full Name"
-            value={newInput}
-            onChange={setNewInput}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <Form.Field
@@ -46,6 +48,8 @@ const ContactPage = () => {
             fluid
             placeholder="Enter the Best Email to Contact You With..."
             label="Contact Email:"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <Form.Field
@@ -53,6 +57,8 @@ const ContactPage = () => {
             fluid
             placeholder="Enter Your Message..."
             label="Message:"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
 
           <Button color="green">Send Message</Button>

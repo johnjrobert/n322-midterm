@@ -14,7 +14,7 @@ import {
 } from "semantic-ui-react";
 
 const ContactPage = () => {
-  const [input, setInput] = React.useState("");
+  const [newInput, setNewInput] = React.useState([]);
   return (
     <React.Fragment>
       <Menu>
@@ -37,6 +37,8 @@ const ContactPage = () => {
             fluid
             placeholder="Please Enter Your Full Name..."
             label="Full Name"
+            value={newInput}
+            onChange={setNewInput}
           />
 
           <Form.Field
